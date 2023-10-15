@@ -38,4 +38,4 @@ export default function QuizDisplay({}: Props) {
     </div>
   );
 }
-efefefefefef
+efefefefefefewfewfwefwefweffw
