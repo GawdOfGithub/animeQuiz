@@ -47,8 +47,8 @@ export default function QuizDisplay({}: Props) {
               setNumber(number+1)}}>
               {data[number].options.c}
           </button>
-          <button className="text-2xl font-bold w-screen mb-5 rounded-3xl 
-          hover:bg-blue-600" onClick={()=>
+          <button className="text-2xl font-bold w-screen mb-5 rounded-3xl hover:bg-blue-600 p-3 
+        " onClick={()=>
             {
               dispatch({
                 type:number,
@@ -59,7 +59,7 @@ export default function QuizDisplay({}: Props) {
               {data[number].options.d}
           </button>
         {state.points}
-       { number>0 ? (<button className="px-12" onClick={()=>setNumber(number-1)} ><ArrowBackIcon/>Previous Question</button>) :null}
+       { number>=0 ? (<button className="px-12" onClick={()=>setNumber(number-1)} ><ArrowBackIcon/>Previous Question</button>) :null}
 
         </div>
       </div>
