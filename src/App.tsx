@@ -1,15 +1,17 @@
 
 import './App.css'
 import QuizDisplay from './Componets/QuizDisplay'
-import Anime from './Contexts/MainContext'
+import QuizComplete from './Componets/QuizComplete'
+import { useAnime } from './Contexts/MainContext'
 function App () {
+  const {number,setNumber} = useAnime()
   return (
     <>
-<Anime>
     <div className=''>
-    <QuizDisplay/>
+    { number<10 ? (<QuizDisplay/>):<QuizComplete/>}
+    
     </div>
-    </Anime>
+    
     
     </>
   )
