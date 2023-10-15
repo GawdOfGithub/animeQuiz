@@ -37,5 +37,5 @@ export default function QuizDisplay({}: Props) {
       </div>
     </div>
   );
-}
+}ff
 efefefefefefewfewfwefwefweffw
