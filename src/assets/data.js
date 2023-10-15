@@ -1,16 +1,20 @@
+
 const data = 
 [
 {
     id:0,
-    question: 'Which of the following is the oldest anime',
+    question: 'Who is the main character in the anime "Naruto"?',
     points: 10,
     options: {
-      a : Naurto,
-      b : OnePiece,
-      c : Pokemon,
-      d : DragonBall,
-    }
-    correct:d
+      a : "Naurto",
+      b : "Sasuke",
+      c : "Ash",
+      d : "Sakura",
+    },
+    correct:4,
 
 }
 ]
+export default data
+
+

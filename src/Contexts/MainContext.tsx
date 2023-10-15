@@ -1,9 +1,20 @@
+/* eslint-disable */
 import React from 'react'
-import{}
-type Props = {hello}
-
-export default function MainContext({}: Props) {
+import { useContext,createContext } from 'react'
+import { useState } from 'react'
+type Props = {}
+const MainContext = createContext(null)
+export default function Anime({children}: Props) {
+const[timer,setTimer] = useState(1)
+{children}
   return (
-    <div>MainContext</div>
+    <MainContext.Provider>
+    {children}
+    </MainContext.Provider>
   )
-}rfrfrfrfruirrgrgrgrrg
+}
+export function useAnime ()
+{
+ useContext(MainContext)
+}
+/* eslint-disable */

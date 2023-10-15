@@ -1,8 +1,16 @@
+
 import './App.css'
+import QuizDisplay from './Componets/QuizDisplay'
+import Anime from './Contexts/MainContext'
 function App () {
   return (
     <>
-    <div>Minimilist vite,react,typescript starrter pack</div>
+<Anime>
+    <div className=''>
+    <QuizDisplay/>
+    </div>
+    </Anime>
+    
     </>
   )
 }
