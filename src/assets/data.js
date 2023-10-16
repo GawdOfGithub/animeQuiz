@@ -20,7 +20,7 @@ const data = [
       b: "Straw Hat Pirates",
       c: "Marines",
       d: "Red Hair Pirates",
-    },
+    },hhh
     correct: 2,
   },
   {
