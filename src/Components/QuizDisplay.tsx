@@ -5,15 +5,16 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 type Props = {};
 
 export default function QuizDisplay({}: Props) {
-  const {number,setNumber,dispatch,state} = useAnime()
+  const {number,setNumber,dispatch,state,start,setStart} = useAnime()
   return (
+
     <div>
       <div className="items-center align-center ml-20">
         <img src="melancholy.jpeg" alt="anime image" style={{ width: "200px", height: "200px" }} />
       </div>
 
       <div className="">
-        <div className="text-2xl font-bold ml-3">{data[number].question}</div>
+        <div className="text-2xl font-bold ml-3">{number+1}.{data[number].question}</div>
         <div className="items-center flex flex-col mt-3">
           <button className="text-2xl font-bold w-screen mb-5 rounded-3xl hover:bg-blue-600" onClick={()=>
           {
@@ -47,7 +48,7 @@ export default function QuizDisplay({}: Props) {
               setNumber(number+1)}}>
               {data[number].options.c}
           </button>
-          <button className="text-2xl font-bold w-screen mb-5 rounded-3xl hover:bg-blue-600 p-3 
+          <button className="text-2xl font-bold w-screen mb-2 rounded-3xl hover:bg-blue-600 p-3 
         " onClick={()=>
             {
               dispatch({
@@ -58,8 +59,8 @@ export default function QuizDisplay({}: Props) {
               setNumber(number+1)}}>
               {data[number].options.d}
           </button>
-        {state.points}
-       { number>=0 ? (<button className="px-12" onClick={()=>setNumber(number-1)} ><ArrowBackIcon/>Previous Question</button>) :null}
+      <span className='font-bold mb-3' > Your current score : {state.points}</span>
+       { number>0 ? (<button className="text-2xl font-bold w-screen mb-2 rounded-3xl hover:bg-blue-600 p-3" onClick={()=>setNumber(number-1)} ><ArrowBackIcon/>Previous Question</button>) :null}
 
         </div>
       </div>

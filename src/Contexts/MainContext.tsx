@@ -11,6 +11,7 @@ export default function Anime({children}) {
   
   const initialState = {points:0}
   const[number,setNumber] = useState(0)
+  const[start,setStart] = useState(true)
  const[state,dispatch] = useReducer(handleAnime,initialState)
 
  function handleAnime(state,action)
@@ -107,7 +108,7 @@ export default function Anime({children}) {
       
 {children}
   return (
-    <MainContext.Provider value={{number,setNumber,dispatch,state}}>
+    <MainContext.Provider value={{number,setNumber,dispatch,state,start,setStart}}>
     {children}
     </MainContext.Provider>
   )

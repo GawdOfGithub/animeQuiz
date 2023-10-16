@@ -9,7 +9,7 @@ const data = [
       c: "Ash",
       d: "Sakura",
     },
-    correct: 4,
+    correct: 1,
   },
   {
     id: 1,
