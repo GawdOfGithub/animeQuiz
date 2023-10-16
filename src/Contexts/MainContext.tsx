@@ -1,120 +1,45 @@
-/* eslint-disable */
+
 import React from 'react'
 import { useContext,createContext } from 'react'
 import { useState } from 'react'
 import { useReducer } from 'react'
-import data from '../assets/data'
+
 
 type Props = {}
 const MainContext = createContext(null)
-export default function Anime({children}) {
+export default function Context ({children}) {
   
-  const initialState = {points:0}
-  const[number,setNumber] = useState(0)
-  const[start,setStart] = useState(true)
- const[state,dispatch] = useReducer(handleAnime,initialState)
-
- function handleAnime(state,action)
+  const initialState = {number:0}
+  const [state,dispatch] = useReducer(handleClick,initialState)
+  
+ function handleClick(state,action)
  {
   
    switch(action.type)
    {
-    
-    case 0:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
+    case "add":
+      return {
+    ...state,number:state.number+1
 
-        case 1:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 2:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 3:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 4:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 5:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 6:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 7:
-    
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 8:
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-        case 9:
-        if(action.payload == action.buttonNumber)
-        {
-           return {...state, points:state.points+10}
-        }
-        else 
-        return state 
-      case "restart":
-        return {...state,points:0}
-       
       }
+      case "subtract":
+         return{
+            ...state,number:state.number-1
+         }
+      default:
+         state
    }
- 
-      
-{children}
-  return (
-    <MainContext.Provider value={{number,setNumber,dispatch,state,start,setStart}}>
-    {children}
-    </MainContext.Provider>
-  )
 }
-export function useAnime ()
+return (
+   <MainContext.Provider value={{state,dispatch}}>
+      {children}
+      </MainContext.Provider>
+
+   
+)
+}
+
+export function useMainContext ()
 {
  return useContext(MainContext)
 }
-/* eslint-disable */

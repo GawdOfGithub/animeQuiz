@@ -1,27 +1,34 @@
 
 import './App.css'
-import QuizDisplay from './Components/QuizDisplay'
-import QuizComplete from './Components/QuizComplete'
-import QuizStart from './Components/QuizStart'
-import { useAnime } from './Contexts/MainContext'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-function App () {
-  const {number,setNumber,start,setStart} = useAnime()
-  console.log(start)
+import { useMainContext } from './Contexts/MainContext'
+
+export default function App () {
+  const {state,dispatch} = useMainContext()     //using the context
+  
   return (
     <>
-   
-    <div className='flex flex-col justify-center items-center'>
-    <Header/>
-   {start && (<QuizStart/>) }
-    {(!start) && ((number<10) ? (<QuizDisplay/>):<QuizComplete/>)}
-    <Footer/>
+   <div className="items-center justify-center flex flex-col h-screen">
+    <div className='text-2xl'> Tailwind context javascript typescript switch mode with context and reducer minimal</div>
+    <button onClick={()=>
+    dispatch(
+      {
+        type:"add",
+      
+      }
+    )
+    }>+</button>
+    <label>{state.number}</label>
+    <button  onClick={()=>
+    dispatch(
+      {
+        type:"subtract",
+      
+      }
+    )} >-</button>
+    
     </div>
-    
-    
     </>
   )
 }
 
-export default App
+
